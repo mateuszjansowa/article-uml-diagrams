@@ -1,0 +1,1 @@
+# Repozytorium dla artykłu
