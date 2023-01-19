@@ -6,36 +6,35 @@ class Subject {
         this.#name = name;
         this.#level = level;
     }
+
+    getName() {
+        return this.#name;
+    }
+
+    getLevel() {
+        return this.#level;
+    }
 }
 
 class Teacher {
-    #school;
-    #subjects;
+    #name;
 
-    constructor(school, subjects) {
-        this.#school = school;
-        this.#subjects = subjects;
+    constructor(name) {
+        this.#name = name;
     }
 
-    addSubject(subject) {
-        if (!(subject instanceof Subject)) {
+    teach(subject) {
+        if (!subject instanceof Subject) {
             throw new Error('Invalid subject');
         }
 
-        this.#subjects.push(subject);
-    }
-
-    removeSubject(subject) {
-        if (!(subject instanceof Subject)) {
-            throw new Error('Invalid subject');
-        }
-
-        this.#subjects = this.#subjects.filter(s => s !== subject);
+        console.log(
+            `I'm teaching ${subject.getName()} at level ${subject.getLevel()}`
+        );
     }
 }
 
 const subject = new Subject('Math', 1);
-const teacher = new Teacher('MIT', []);
+const teacher = new Teacher('Matt');
 
-teacher.addSubject(subject);
-console.log(teacher);
+teacher.teach(subject);
