@@ -29,7 +29,8 @@ class Teacher {
         }
 
         console.log(
-            `I'm teaching ${subject.getName()} at level ${subject.getLevel()}`
+            `I'm teaching ${subject.getName()},
+            at level ${subject.getLevel()}`
         );
     }
 }
