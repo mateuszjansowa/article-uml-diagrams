@@ -1,12 +1,10 @@
 class AbstractPerson {
     #name;
     #age;
-    #isAdult;
 
-    constructor(name, age, isAdult) {
+    constructor(name, age) {
         this.#name = name;
         this.#age = age;
-        this.#isAdult = isAdult;
     }
 
     getName() {
@@ -25,27 +23,23 @@ class AbstractPerson {
         this.#age = age;
     }
 
-    getIsAdult() {
-        return this.#isAdult;
-    }
-
-    setIsAdult(isAdult) {
-        this.#isAdult = isAdult;
+    isAdult() {
+        return this.#age >= 18;
     }
 }
 
 class Teacher extends AbstractPerson {
-    #school;
+    #schoolName;
     #students;
 
-    constructor(name, age, isAdult, school, students) {
+    constructor(name, age, isAdult, schoolName, students) {
         super(name, age, isAdult);
-        this.#school = school;
+        this.#schoolName = schoolName;
         this.#students = students;
     }
 
     getSchool() {
-        return this.#school;
+        return this.#schoolName;
     }
 }
 
