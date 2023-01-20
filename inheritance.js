@@ -32,8 +32,8 @@ class Teacher extends AbstractPerson {
     #schoolName;
     #students;
 
-    constructor(name, age, isAdult, schoolName, students) {
-        super(name, age, isAdult);
+    constructor(name, age, schoolName, students) {
+        super(name, age);
         this.#schoolName = schoolName;
         this.#students = students;
     }
